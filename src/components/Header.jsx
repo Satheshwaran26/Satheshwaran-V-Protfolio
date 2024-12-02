@@ -15,7 +15,7 @@ function Header() {
       <div className="absolute -bottom-20 -right-40 w-[300px] h-[300px] bg-[#4A4A4A] opacity-50 blur-[150px] rounded-full pointer-events-none"></div>
 
       {/* Navbar */}
-      <nav className="flex justify-between items-center p-5 h-16 max-w-[90%] md:max-w-[620px] mx-auto border border-[rgba(68,68,68,0.4)] rounded-full5 mt-4">
+      <nav className="flex justify-between items-center p-5 h-16 max-w-[90%] md:max-w-[620px] mx-auto border border-[rgba(68,68,68,0.4)] rounded-full mt-4">
       {/* Logo */}
       <motion.div
         initial={{ opacity: 0, x: -50 }}
