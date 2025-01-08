@@ -67,6 +67,7 @@ body {
 
 /* Hero Section */
 .hero-section {
+  z-index:1;
   margin-top: 110px;
   margin-bottom: 50px;
   display: flex;
@@ -76,6 +77,7 @@ body {
   max-width: 1800px;
   margin-left: auto;
   margin-right: auto;
+  flex-direction: row-reverse; /* Change the direction so the image comes first */
 }
 
 .hero-section::before {
@@ -91,15 +93,41 @@ body {
   z-index: -1;
 }
 
+@media (max-width: 768px) {
+  .hero-section::before {
+    top: -600px; /* Adjust top position for smaller screens */
+    width: 1200px; /* Reduce width for mobile */
+    height: 1200px; /* Reduce height for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section::before {
+    top: -500px; /* Adjust top position for smaller screens */
+    width: 1000px; /* Further reduce width */
+    height: 1000px; /* Further reduce height */
+  }
+}
+
+.hero-image {
+  order: 1; /* Ensure the image comes first */
+}
+
+.hero-content {
+  order: 2; /* Text content comes second */
+}
+
 .hero-content h1 {
   font-size: 3.5em;
   font-weight: 200;
+  width: 1200px;
   margin: 15px 0 25px 0;
 }
 
 .hero-content p {
-  margin: 15px 0 35px;
+  padding: 15px 0 35px;
   font-size: 1.2em;
+  font-weight: 200;
 }
 
 .badge {
@@ -108,15 +136,28 @@ body {
   border: 1px solid silver;
   border-radius: 30px;
   font-size: 1.2em;
+  font-weight: 200;
 }
 
 /* Hero Section Buttons */
-.dowload-btn,
-.wrk-btn {
+.download-btn {
   padding: 10px 20px;
   border: none;
   margin-bottom: 10px;
   margin-right: 10px;
+  cursor: pointer;
+  border-radius: 30px;
+  font-weight: 200;
+  font-size: 1.5em;
+  text-decoration: none;
+  border: 1px solid rgba(94, 93, 93, 0.4);
+  color: silver;
+  transition: all 0.3s ease-in-out;
+}
+
+.wrk-btn {
+  padding: 13px 20px 10px 5px;
+  border: none;
   cursor: pointer;
   border-radius: 30px;
   font-weight: 200;
@@ -144,8 +185,9 @@ body {
   width: 420px;
   height: 420px;
   padding: 8px;
+
   background-color: rgba(94, 93, 93, 0.12);
-  border: 1px solid rgba(94, 93, 93, 0.4);
+  border: 2px dotted rgba(94, 93, 93, 0.4);
   filter: drop-shadow(100px);
   border-radius: 50%;
   object-fit: cover;
@@ -211,7 +253,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 10px 20px;
-  margin: 20px 20px;
+    margin: 20px 20px;
     height: auto;
   }
 
@@ -245,14 +287,18 @@ body {
     flex-direction: column;
     text-align: center;
     padding: 20px;
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
   }
 
   .hero-content h1 {
-    font-size: 2.2em;
+    font-size: 1.7em;
+    width: 480px;
   }
 
   .hero-content p {
-    font-size: 1em;
+    font-size: 14px;
   }
 
   .hero-image img {
@@ -261,10 +307,17 @@ body {
     margin: 20px 0;
   }
 
-  .dowload-btn,
-  .wrk-btn {
-    font-size: 1em;
+  .dowload-btn {
+    font-size: 1.2em;
     padding: 8px 15px;
+    margin-right: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .wrk-btn {
+    font-size: 1.2em;
+    padding: 8px 13px 8px 5px;
     margin-right: 0;
     width: 100%;
     text-align: center;

@@ -1,0 +1,136 @@
+
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 200;
+  }
+  .header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    font-weight: 200;
+  }
+  .header span {
+    color: #383838;
+    font-weight: 300;
+  }
+  .project {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    align-items: center;
+  }
+  .project.reverse {
+    flex-direction: row-reverse;
+  }
+  .project img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+  }
+  .project-content {
+    flex: 1;
+    padding: 60px;
+  }
+  .project-content h2 {
+    font-size: 2.4em;
+    margin: 0 0 10px;
+    font-weight: 300;
+  }
+  .project-content p {
+    font-size: 1.3em;
+    margin: 0 0 20px;
+    font-weight: 300;
+  }
+  .project-content .category {
+    color: #414140;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+  }
+  .project-content .view-more {
+    color: #282828;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    font-size: 1.1em;
+    align-items: center;
+  }
+  .project-content .view-more img{
+    margin-left: 10px;
+
+    padding-right: 15px;
+  }
+  .view-more-projects {
+    text-align: center;
+    margin-top: 60px; /* Consolidated margin-top */
+  }
+  
+  .view-more-projects a {
+    display: inline-flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically align text and icon */
+    justify-content: center; /* Horizontally center content */
+    gap: 10px; /* Space between the icon and text */
+    background-color: transparent;
+    color: #515151;
+    font-size: 1.3em;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 60px; /* Redundant, can be removed */
+    text-decoration: none;
+    font-weight: 400;
+    border: 2px solid #242424;
+    transition: all 0.3s ease; /* Add smooth hover effect */
+  }
+  
+  .view-more-projects a i {
+    font-size: 1.2em;
+  }
+  
+  .view-more-projects a:hover {
+    background-color: #000000; /* Optional: Hover background effect */
+    color:rgb(113, 112, 112);
+    border-color: #404040;
+  }
+  
+  @media (max-width: 768px) {
+    .project {
+      flex-direction: column;
+    }
+    .project.reverse {
+      flex-direction: column;
+    }
+    .project-content {
+      padding: 10px;
+      text-align: center;
+    }
+  }
+  .links {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .github-link {
+    color: #6e6d6d;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .github-link i {
+    font-size: 1.8em;
+  }
+  
+  .github-link:hover {
+  
+  }
+  

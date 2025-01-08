@@ -1,12 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Jua&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 body {
   margin: 0;
- background-color:rgb(0, 0, 0);
- color: silver;
-  
+  height: 100vh;
+  background-color: #000000;
+  opacity: 0.9;
+  background-image: 
+    linear-gradient(#19191956 1px, transparent 1px), 
+    linear-gradient(to right, #19191956 1px, #000000 2px);
+  background-size: 20px 35px;
+  animation: move-pattern 5s linear infinite;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+@keyframes move-pattern {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100px 100px;
+  }}

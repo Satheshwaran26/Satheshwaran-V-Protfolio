@@ -17,10 +17,9 @@ function Header() {
         <div className={`nav-links-container ${menuOpen ? "active" : ""}`}>
           <ul className="nav-links">
             <li>Home</li>
-            <li>About</li>
             <li>Skills</li>
             <li>Projects</li>
-            <li>Education</li>
+            <li>Contact</li>
             <li className="connect-button">Connect</li>
           </ul>
         </div>
@@ -36,20 +35,21 @@ function Header() {
         <div className="hero-content">
           <span className="badge">⭐ Front-End Developer</span>
           <h1>
-            I am Passionated in web Developement <br /> and App Developement
+            I am Passionated in web Developement and App Developement
           </h1>
           <p>Lorem ipsum dolor, sit amet consectetur adipiscing.</p>
           <div className="buttons">
-            <a href="path-to-cv.pdf" className="dowload-btn" download="YourCVName.pdf">
-              Download CV
-            </a>
+          <a href="path-to-cv.pdf" className="download-btn" download="YourCVName.pdf">
+        Download CV
+      </a>
             <a href="#working-style-section" className="wrk-btn">
               <i className="fa-solid fa-play"></i>Working Style
             </a>
           </div>
         </div>
         <div className="hero-image">
-          <img src={profileImage} alt="Profile" />
+          
+          <img src={profileImage} alt="Profile" />          
         </div>
       </div>
     </header>

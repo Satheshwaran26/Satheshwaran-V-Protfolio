@@ -1,48 +1,164 @@
-import React from 'react';
-import './SkillSection.css';
+// File: Skill.jsx
+import React from "react";
+import "./SkillSection.css";
+import reactLogo from "../assets/react.png";
+import diconLogo from "../assets/css.png";
+import Htmllogo from "../assets/html (1).png";
+import Javascriptlogo from "../assets/javascript (1).png";
+import Tailwindlogo from "../assets/tailwind.png";
+import Bootstrap from "../assets/bootstrap.png";
+import Fluttre from "../assets/flutter (1).png";
+import Node from "../assets/nodejs.png";
+import python from "../assets/python (1).png";
+import firbase from "../assets/firebase.png";
+import mysql from "../assets/mysql.png";
+import email from "../assets/emailjs.png";
+import mongo from "../assets/mongo-db.png";
+import vscode from "../assets/vs.png";
+import gitlogo from "../assets/git.png";
+import bvk from "../assets/ex.png";
+import github from "../assets/github.png";
+import netlifylogo from "../assets/netlify.png";
+import Vercel from "../assets/vercel.png";
+import canva from "../assets/canva.png";
+const SkillSection = ({ title, skills }) => (
+  <div className="section">
+    <h2>{title}</h2>
+    <div className="grid">
+      {skills.map((skill, index) => (
+        <div className="card" key={index}>
+          <img
+            src={skill.image}
+            alt={`${skill.name} logo`}
+            width="25"
+            height="25"
+          />
+          <span>{skill.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+);
 
-const skills = [
-  { name: 'Figma', image: 'https://storage.googleapis.com/a1aa/image/uH8fqdGfXXgUA0lSZT9lbRq4L1RgVIG4cJv5qMbpzCwstp8TA.jpg', percentage: '95%' },
-  { name: 'Framer', image: 'https://storage.googleapis.com/a1aa/image/mxIuAvlL5zqlMtiN0JwRMAPLi0YmS4GfznY1qBWQ86Y82UeTA.jpg', percentage: '83%' },
-  { name: 'Photoshop', image: 'https://storage.googleapis.com/a1aa/image/rgjYxnL9U7qPPJqHfIpxTOHBxiKplZSxce69NaFipuwvtp8TA.jpg', percentage: '93%' },
-  { name: 'Wordpress', image: 'https://storage.googleapis.com/a1aa/image/EiMouxyxWo57JxCIebTSeLTLdvWWsOHT7Q3OeTGyz61mbT5nA.jpg', percentage: '84%' },
-  { name: 'Angular', image: 'https://storage.googleapis.com/a1aa/image/FlZckXQ9mW4ZONKcw29pAuuABIs8pxi4XI7hk4zATkWbbKfJA.jpg', percentage: '65%' },
-  { name: 'Webflow', image: 'https://storage.googleapis.com/a1aa/image/tUVMYYxbULoZDZS2yx3MV7dwBWyu6J6rOo9aeIs7Y3v42UeTA.jpg', percentage: '86%' },
-  { name: 'Python', image: 'https://storage.googleapis.com/a1aa/image/GbcscdXfH6y5ES1L5LTLMgKiHkVft86i6WYHOfTGRzotbT5nA.jpg', percentage: '62%' },
-  { name: 'Sketch', image: 'https://storage.googleapis.com/a1aa/image/T74x13LoitZsJpCdKHWDTIe8I0027G4kaUOltwQI3Gv62UeTA.jpg', percentage: '94%' },
-];
+const Skill = () => {
+  const backendSkills = [
+    {
+      name: "HTML5",
+      image: Htmllogo,
+    },
+    {
+      name: "CSS3",
+      image: diconLogo,
+    },
+    {
+      name: "JavaScript",
+      image:
+        Javascriptlogo,
+    },
+    {
+      name: "React JS",
+      image:
+        reactLogo,
+    },
+    {
+      name: "Tailwind CSS",
+      image:
+        Tailwindlogo,
+    },
+    {
+      name: "Bootstrap",
+      image:
+        Bootstrap,
+    },
+    {
+      name: "Flutter",
+      image:
+        Fluttre,
+    },
 
-const SkillsSection = () => {
+  ];
+
+  const frontendSkills = [
+    {
+      name: "Node JS",
+      image:
+        Node,
+    },
+    {
+      name: "Express JS",
+      image: bvk
+        ,
+    },
+    {
+      name: "Python",
+      image:python
+        ,
+    },
+    {
+      name: "Firebase",
+      image:
+        firbase,
+    },
+    {
+      name: "MySQL",
+      image:
+        mysql,
+    },
+    {
+      name: "Email JS",
+      image:
+        email,
+    },
+   
+    {
+      name: "MongoDB",
+      image:
+        mongo,
+    },
+  ];
+
+  const tools = [
+    {
+      name: "VS Code",
+      image:
+        
+      vscode,
+    },
+    {
+      name: "Git",
+      image:
+        gitlogo,
+    },
+    {
+      name: "GitHub",
+      image:
+        github,
+    },
+    {
+      name: "Netlify",
+      image:
+       netlifylogo,
+    },
+    {
+      name: "Vercel",
+      image:
+       Vercel,
+    },
+    {
+      name: "Canva",
+      image:
+       canva,
+    },
+  ];
+
   return (
     <div className="container">
-      {/* Left Section */}
-      <div className="left-section">
-        <p>My Skills</p>
-        <h1>
-          Let's Explore Popular <span>Skills & Experience</span>
-        </h1>
-        <p>
-          Sed ut perspiciatis unde omnis iste natus to voluptatem accusantium
-          doloremque laudantium, totam rem aperiamc eaque ipsa quae ab illo
-          inventore veritatis.
-        </p>
-        <a className="btn" href="#home">
-          Learn More <i className="fas fa-arrow-right"></i>
-        </a>
-      </div>
-
-      {/* Right Section */}
-      <div className="right-section">
-        {skills.map((skill, index) => (
-          <div className="skill-card" key={index}>
-            <img src={skill.image} alt={`${skill.name} logo`} />
-            <p>{skill.name}</p>
-            <div className="percentage">{skill.percentage}</div>
-          </div>
-        ))}
-      </div>
+      <h1 className="titlehead">TECHNOLOGIEËN</h1>
+      <SkillSection title="Frontend" skills={backendSkills} />
+      <SkillSection title="Backend" skills={frontendSkills} />
+      <SkillSection title="Tools" skills={tools} />
     </div>
   );
 };
 
-export default SkillsSection;
+export default Skill;
