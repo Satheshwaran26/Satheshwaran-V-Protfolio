@@ -22,7 +22,7 @@ import canva from "../assets/canva.png";
 
 const SkillSection = ({ title, skills }) => (
   <div className="mb-10 font-poppins">
-    <h2 className="text-2xl text-[#535353] font-light mb-5 uppercase">{title}</h2>
+    <h2 className="text-xl sm:text-2xl text-[#535353] font-light mb-5 uppercase">{title}</h2>
     <div className="grid grid-cols-2 sm:grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-5">
       {skills.map((skill, index) => (
         <div
@@ -32,9 +32,11 @@ const SkillSection = ({ title, skills }) => (
           <img
             src={skill.image}
             alt={`${skill.name} logo`}
-            className="w-12 h-12 p-1 font-[100]"
+            className="w-12 h-12 p-1 flex-shrink-0"
           />
-          <span className="text-lg font-[400] text-[#c0c0c0] pl-4">{skill.name}</span>
+          <span className="text-sm sm:text-lg font-[400] text-[#c0c0c0] pl-4 truncate max-w-full">
+            {skill.name}
+          </span>
         </div>
       ))}
     </div>
