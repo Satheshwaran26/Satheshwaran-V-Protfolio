@@ -21,13 +21,13 @@ import Vercel from "../assets/vercel.png";
 import canva from "../assets/canva.png";
 
 const SkillSection = ({ title, skills }) => (
-  <div className="mb-10">
+  <div className="mb-10 font-poppins">
     <h2 className="text-2xl text-[#535353] font-light mb-5 uppercase">{title}</h2>
     <div className="grid grid-cols-2 sm:grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-5">
       {skills.map((skill, index) => (
         <div
           key={index}
-          className="flex items-center bg-[#2e2e2e31] border border-[#232323] rounded-lg p-4 hover:translate-y-[-5px] hover:shadow-lg transition-transform duration-200 h-[58px] w-full backdrop-blur-[15px]"
+          className="flex items-center bg-[#4140401b] border border-[#232323] rounded-lg p-4 hover:translate-y-[-5px] hover:shadow-lg transition-transform duration-200 h-[58px] w-full backdrop-blur-[15px]"
         >
           <img
             src={skill.image}
