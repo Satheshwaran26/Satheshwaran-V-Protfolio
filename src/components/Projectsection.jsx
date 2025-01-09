@@ -38,7 +38,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-screen-lg font-poppins">
+    <div className="container mx-auto px-4 py-8 max-w-screen-xl font-poppins">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-extralight">
           Explore My Popular <span className="font-extralight text-[#4e4e4e]">Projects</span>
