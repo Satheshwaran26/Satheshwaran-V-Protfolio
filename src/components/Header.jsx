@@ -44,7 +44,7 @@ function Header() {
       <div className="hero-section xl:pt-[100px] pb-[100px] 
        flex flex-col md:flex-row items-center justify-between max-w-[90%] md:max-w-[1650px] mx-auto mt-20 px-5 text-center md:text-left">
         {/* Profile Image */}
-        <div className="order-1 md:order-2 mt-8 mb-4 md:mt-0 flex justify-end w-full mr-[50px]   ">
+        <div className="order-1 md:order-2 mt-8 mb-4 md:mt-0 flex justify-end w-full mr-[30px]   ">
           <img
             src={profileImage}
             alt="Profile Picture of the Developer"
