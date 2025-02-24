@@ -1,18 +1,18 @@
 import React from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import linkIcon from '../assets/link-icon.png'; // Adjust the path as necessary
-
+import gym from "../assets/gym.png";
 const Projects = () => {
   const projectData = [
     {
-      imgSrc: "https://storage.googleapis.com/a1aa/image/LWx7YK9aXa6sEx7glKSkeS8QmXnZbAKXUqJ7fdAkYUMGCxCUA.jpg",
+      imgSrc: gym,  // No need to import
       category: "Product Design",
       title: "Mobile Application Design",
       description: "Build a mobile application with a clean and modern user interface.",
       link: "https://example.com/project1",
       githubLink: "https://github.com/example/repo1",
-    },
+    }
+,    
     {
       imgSrc: "https://storage.googleapis.com/a1aa/image/uzabivi0YsalHJph5CiFHme9I9PhEXtv4rzaIhkn0qLBhYBKA.jpg",
       category: "Product Design",
@@ -64,10 +64,12 @@ const Projects = () => {
           key={index}
         >
           <motion.img
-            alt={project.title}
-            src={project.imgSrc}
-            className="w-full max-w-sm rounded-lg mb-6 md:mb-0 md:w-1/2"
-          />
+        
+          alt={project.title}  
+          src={project.imgSrc}  
+          className="w-full max-w-lg aspect-[14/9] rounded-lg mb-6 md:mb-0 object-cover border-2 border-gray-00"  
+        />
+        
           <div className="md:w-1/2 px-6 py-8 text-center md:text-left">
             <div className="text-[1.8em] font-[300] text-[#6f6f6f] mb-2">{project.category}</div>
             <h2 className="text-5xl font-light text-[#aaaaaa] mb-3 max-w-full md:max-w-lg">{project.title}</h2>
