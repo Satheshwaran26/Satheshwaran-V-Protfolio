@@ -42,7 +42,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="relative py-20 font-poppins overflow-hidden" id="projects">
+    <div className="relative py-10 md:py-20 font-poppins overflow-hidden" id="projects">
       {/* Background elements */}
       <div className="absolute -top-20 -left-40 w-[400px] h-[400px] bg-[#4A4A4A] opacity-20 blur-[150px] rounded-full pointer-events-none"></div>
       <div className="absolute -bottom-20 -right-40 w-[300px] h-[300px] bg-[#4A4A4A] opacity-20 blur-[150px] rounded-full pointer-events-none"></div>
@@ -53,17 +53,17 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
-          <h1 className="text-5xl font-extralight bg-clip-text text-transparent bg-gradient-to-r from-[#c0c0c0] to-[#4e4e4e] mb-4">
+          <h1 className="text-3xl md:text-5xl font-extralight bg-clip-text text-transparent bg-gradient-to-r from-[#c0c0c0] to-[#4e4e4e] mb-4">
             Explore My Popular Projects
           </h1>
-          <p className="text-[#6f6f6f] text-xl max-w-2xl mx-auto">
+          <p className="text-[#6f6f6f] text-base md:text-xl max-w-2xl mx-auto">
             Check out some of my recent work that showcases my skills and creativity
           </p>
         </motion.div>
 
-        <div className="space-y-28">
+        <div className="space-y-16 md:space-y-28">
           {projectData.map((project, index) => (
             <motion.div
               initial={{ opacity: 0, y: 100 }}
@@ -75,9 +75,9 @@ const Projects = () => {
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-8 lg:gap-12`}>
+              <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-6 md:gap-8 lg:gap-12`}>
                 <motion.div 
-                  className="lg:w-1/2 relative overflow-hidden rounded-2xl"
+                  className="w-full lg:w-1/2 relative overflow-hidden rounded-2xl"
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -116,21 +116,21 @@ const Projects = () => {
                 </motion.div>
 
                 <motion.div 
-                  className="lg:w-1/2 p-6 text-center lg:text-left"
+                  className="w-full lg:w-1/2 p-4 md:p-6 text-center lg:text-left"
                   initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                   viewport={{ once: true }}
                 >
                   <motion.div 
-                    className="inline-block py-1 px-3 rounded-full text-[#6f6f6f] text-sm font-medium mb-3 border border-[rgba(68,68,68,0.4)] bg-[rgba(17,17,17,0.2)] backdrop-blur-[15px]"
+                    className="inline-block py-1 px-3 rounded-full text-[#6f6f6f] text-xs md:text-sm font-medium mb-3 border border-[rgba(68,68,68,0.4)] bg-[rgba(17,17,17,0.2)] backdrop-blur-[15px]"
                     whileHover={{ scale: 1.05 }}
                   >
                     {project.category}
                   </motion.div>
                   
                   <motion.h2 
-                    className="text-3xl sm:text-4xl md:text-5xl font-light text-[#aaaaaa] mb-4 leading-tight"
+                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-[#aaaaaa] mb-3 md:mb-4 leading-tight"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
@@ -140,7 +140,7 @@ const Projects = () => {
                   </motion.h2>
                   
                   <motion.p 
-                    className="text-[1.1em] text-[#6f6f6f] mb-6 leading-relaxed"
+                    className="text-base md:text-[1.1em] text-[#6f6f6f] mb-4 md:mb-6 leading-relaxed"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
@@ -150,7 +150,7 @@ const Projects = () => {
                   </motion.p>
                   
                   <motion.div 
-                    className="flex justify-center lg:justify-start space-x-4 mt-6"
+                    className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:space-x-4 mt-4 md:mt-6"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.5 }}
@@ -160,7 +160,7 @@ const Projects = () => {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="py-2.5 px-6 border border-[rgba(68,68,68,0.4)] bg-[rgba(17,17,17,0.3)] backdrop-blur-[15px] text-gray-300 rounded-full text-center hover:bg-[rgba(68,68,68,0.2)] transition-all duration-300"
+                      className="py-2 sm:py-2.5 px-4 sm:px-6 border border-[rgba(68,68,68,0.4)] bg-[rgba(17,17,17,0.3)] backdrop-blur-[15px] text-gray-300 rounded-full text-center hover:bg-[rgba(68,68,68,0.2)] transition-all duration-300 text-sm md:text-base"
                     >
                       View Project
                     </a>
@@ -168,7 +168,7 @@ const Projects = () => {
                       href={project.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="py-2.5 px-6 border border-[rgba(68,68,68,0.4)] text-gray-300 rounded-full flex items-center justify-center hover:bg-[rgba(17,17,17,0.3)] transition-all duration-300"
+                      className="py-2 sm:py-2.5 px-4 sm:px-6 border border-[rgba(68,68,68,0.4)] text-gray-300 rounded-full flex items-center justify-center hover:bg-[rgba(17,17,17,0.3)] transition-all duration-300 text-sm md:text-base"
                     >
                       <i className="fab fa-github mr-2"></i> Code
                     </a>
@@ -184,13 +184,13 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mt-20"
+          className="text-center mt-12 md:mt-20"
         >
           <a
             href="https://example.com/projects"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-3 px-8 py-3.5 text-[#c0c0c0] font-light border border-[rgba(68,68,68,0.4)] bg-[rgba(17,17,17,0.3)] backdrop-blur-[15px] rounded-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(68,68,68,0.6)] hover:bg-[rgba(68,68,68,0.2)]"
+            className="inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-3.5 text-[#c0c0c0] font-light border border-[rgba(68,68,68,0.4)] bg-[rgba(17,17,17,0.3)] backdrop-blur-[15px] rounded-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(68,68,68,0.6)] hover:bg-[rgba(68,68,68,0.2)] text-sm md:text-base"
           >
             View More Projects
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-right" viewBox="0 0 16 16">
