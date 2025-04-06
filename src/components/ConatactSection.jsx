@@ -106,7 +106,7 @@ const ContactSection = () => {
               variants={itemVariants}
               className="text-3xl md:text-4xl font-light mb-6 text-center md:text-left bg-clip-text text-transparent bg-gradient-to-r from-[#c0c0c0] to-[#8a8a8a]"
             >
-              Drop me a line or say <span className="inline-block transform hover:rotate-12 transition-transform duration-300">👋</span> on social networks
+              Drop me a line or say <span className="text-yellow-400">👋</span>  on social networks
             </motion.h1>
             
             <motion.p 
@@ -147,14 +147,14 @@ const ContactSection = () => {
                     className="flex items-center justify-center w-12 h-12 rounded-full bg-[rgba(255,255,255,0.03)] border border-[rgba(68,68,68,0.4)] text-gray-400 hover:text-white hover:bg-[rgba(255,255,255,0.1)] transition-all duration-300"
                     aria-label="Dribbble"
                   >
-                    <i className="fab fa-dribbble text-lg"></i>
+                    <i className="fab fa-github text-lg"></i>
                   </a>
                   <a
                     href="#"
                     className="flex items-center justify-center w-12 h-12 rounded-full bg-[rgba(255,255,255,0.03)] border border-[rgba(68,68,68,0.4)] text-gray-400 hover:text-white hover:bg-[rgba(255,255,255,0.1)] transition-all duration-300"
                     aria-label="Figma"
                   >
-                    <i className="fab fa-figma text-lg"></i>
+                    <i className="fab fa-instagram text-lg"></i>
                   </a>
                 </div>
                 

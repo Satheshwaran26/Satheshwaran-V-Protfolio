@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import linkIcon from '../assets/link-icon.png';
-import gym from "../assets/gym.png";
-
+import gym from "../assets/Error-tech.png";
+import Dashboard from "../assets/Dashboard.png";
+import resume from "../assets/resume.png"
 const Projects = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   
@@ -16,7 +17,7 @@ const Projects = () => {
       githubLink: "https://github.com/example/repo1",
     },    
     {
-      imgSrc: "https://storage.googleapis.com/a1aa/image/uzabivi0YsalHJph5CiFHme9I9PhEXtv4rzaIhkn0qLBhYBKA.jpg",
+      imgSrc: Dashboard,
       category: "Product Design",
       title: "Website Makeup Design",
       description: "Redesign a website with a fresh and modern look.",
@@ -24,7 +25,7 @@ const Projects = () => {
       githubLink: "https://github.com/example/repo2",
     },
     {
-      imgSrc: "https://storage.googleapis.com/a1aa/image/BeMJE6NRNZxxKS5lp3FIlkPLgmdm0EUgADGfufbCAWaOEiFoA.jpg",
+      imgSrc: resume,
       category: "Product Design",
       title: "Brand Identity and Motion Design",
       description: "Create a unique brand identity and motion graphics.",
@@ -85,7 +86,7 @@ const Projects = () => {
                     <motion.img
                       src={project.imgSrc}
                       alt={project.title}
-                      className="w-full aspect-[16/10] object-cover transition-transform duration-700 ease-in-out"
+                      className="w-full aspect-[26/16] object-cover transition-transform duration-700 ease-in-out"
                       whileHover={{ scale: 1.05 }}
                     />
                   </div>
@@ -150,7 +151,7 @@ const Projects = () => {
                   </motion.p>
                   
                   <motion.div 
-                    className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:space-x-4 mt-4 md:mt-6"
+                    className="flex  justify-center lg:justify-start gap-3 sm:space-x-4 mt-4 md:mt-6"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.5 }}

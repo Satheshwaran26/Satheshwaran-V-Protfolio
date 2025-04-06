@@ -9,6 +9,15 @@ function Header() {
     setMenuOpen(!menuOpen);
   };
 
+  // Function to handle smooth scrolling to sections
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setMenuOpen(false); // Close mobile menu after clicking
+    }
+  };
+
   return (
     <header className="relative text-[#c0c0c0] font-poppins overflow-hidden">
       {/* Blur Circle */}
@@ -42,44 +51,70 @@ function Header() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-col md:flex-row list-none text-center font-light items-center gap-6 py-6 md:py-0"
           >
-            <li className="cursor-pointer text-[1.1em] text-[#c0c0c0] hover:text-white transition-colors duration-300">Home</li>
-            <li className="cursor-pointer text-[1.1em] text-[#c0c0c0] hover:text-white transition-colors duration-300">
+            <li 
+              onClick={() => scrollToSection("home")}
+              className="cursor-pointer text-[1.1em] text-[#c0c0c0] hover:text-white transition-colors duration-300"
+            >
+              Home
+            </li>
+            <li 
+              onClick={() => scrollToSection("Skill")} 
+              className="cursor-pointer text-[1.1em] text-[#c0c0c0] hover:text-white transition-colors duration-300"
+            >
               Skills
             </li>
             <li
+              onClick={() => scrollToSection("projects")}
               className="cursor-pointer text-[1.1em] text-[#c0c0c0] hover:text-white transition-colors duration-300"
             >
               Projects
             </li>
-            <li className="cursor-pointer text-[1.1em] text-[#c0c0c0] hover:text-white transition-colors duration-300">Contact</li>
-            <li className="border border-[rgba(94,93,93,0.4)] py-2 px-3.5 mt-2 md:mt-0 md:ml-2.5 text-xl rounded-full cursor-pointer text-[#c0c0c0] hover:bg-[rgba(68,68,68,0.2)] hover:text-white transition-all duration-300">
+            <li 
+              onClick={() => scrollToSection("contact")}
+              className="cursor-pointer text-[1.1em] text-[#c0c0c0] hover:text-white transition-colors duration-300"
+            >
+              Contact
+            </li>
+            <li 
+             
+              className="border border-[rgba(94,93,93,0.4)] py-2 px-3.5 mt-2 md:mt-0 md:ml-2.5 text-xl rounded-full cursor-pointer text-[#c0c0c0] hover:bg-[rgba(68,68,68,0.2)] hover:text-white transition-all duration-300"
+            >
               Connect
             </li>
           </motion.ul>
         </motion.div>
 
-        {/* Hamburger Icon */}
-        <motion.div
-          initial={{ rotate: 0 }}
-          animate={{ rotate: menuOpen ? 90 : 0 }}
-          transition={{ duration: 0.3 }}
-          className="cursor-pointer md:hidden z-[50]"
+        {/* Hamburger Icon with modern animation */}
+        <div 
+          className="cursor-pointer md:hidden z-[50] w-7 h-6 flex flex-col justify-between relative hamburger-menu"
           onClick={toggleMenu}
         >
           <motion.span
-            initial={{ scale: 1 }}
-            animate={{ scale: menuOpen ? 0.8 : 1 }}
-            className="block w-6 h-0.5 bg-white mb-1"
+            initial={{ rotate: 0 }}
+            animate={{ rotate: menuOpen ? 45 : 0, y: menuOpen ? 9 : 0 }}
+            transition={{ duration: 0.3 }}
+            className="block w-full h-[2px] bg-white origin-left"
           ></motion.span>
           <motion.span
-            className="block ml-2 w-4 h-0.5 bg-white mb-1"
+            initial={{ opacity: 1, x: 0 }}
+            animate={{ 
+              opacity: menuOpen ? 0 : 1, 
+              x: menuOpen ? -10 : 0 
+            }}
+            transition={{ duration: 0.3 }}
+            className="block w-3/4 h-[2px] bg-white self-end"
           ></motion.span>
-          <motion.span className="block ml-4 w-2 h-0.5 bg-white"></motion.span>
-        </motion.div>
+          <motion.span
+            initial={{ rotate: 0 }}
+            animate={{ rotate: menuOpen ? -45 : 0, y: menuOpen ? -9 : 0 }}
+            transition={{ duration: 0.3 }}
+            className="block w-full h-[2px] bg-white origin-left"
+          ></motion.span>
+        </div>
       </nav>
 
       {/* Hero Section - Fixed responsive layout issues */}
-      <div className="hero-section pt-[40px] md:pt-[60px] xl:pt-[80px] pb-[70px] flex flex-col lg:flex-row items-center justify-between max-w-[90%] md:max-w-[1650px] mx-auto mt-10 md:mt-20 px-4 md:px-5 text-center lg:text-left">
+      <div id="home" className="hero-section pt-[40px] md:pt-[60px] xl:pt-[80px] pb-[70px] flex flex-col lg:flex-row items-center justify-between max-w-[90%] md:max-w-[1650px] mx-auto mt-10 md:mt-20 px-4 md:px-5 text-center lg:text-left">
         
         {/* Text Section - Now appears first on mobile and desktop */}
         <motion.div
@@ -135,7 +170,7 @@ function Header() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 sm:space-x-4 h-auto text-[0.9em] sm:text-[1em] md:text-[1.2em] font-[200] w-full sm:w-auto"
+            className="flex  gap-4 sm:space-x-4 h-auto text-[0.9em] sm:text-[1em] md:text-[1.2em] font-[200] w-full sm:w-auto"
           >
             <a
               href="path-to-cv.pdf"
@@ -149,9 +184,7 @@ function Header() {
               className="py-3 px-6 border border-[rgba(68,68,68,0.4)] bg-[rgba(17,17,17,0.3)] backdrop-blur-[15px] text-gray-300 rounded-full flex items-center justify-center hover:border-[rgba(120,120,120,0.4)] hover:text-white transition-all duration-300 w-full sm:w-auto"
             >
               <span>Working Style</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="ml-2 bi bi-arrow-right" viewBox="0 0 16 16">
-                <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-              </svg>
+              
             </a>
           </motion.div>
         </motion.div>
